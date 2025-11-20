@@ -18,15 +18,25 @@
         <div class="card-body">
             <h3 th:text="${post.title}"></h3>
             <p th:text="${post.content}"></p>
+
             <div class="d-flex justify-content-between align-items-center">
                 <small class="text-muted" th:text="${post.date}"></small>
-                <a th:href="@{/delete/{id}(id=${post.id})}"
-                    class="btn btn-sm btn-danger"
-                    onclick="return confirm('Delete this post?');">
-                        Delete
-                </a>
 
-            </div>        
+                <div>
+                    <!-- EDIT BUTTON -->
+                    <a th:href="@{/edit/{id}(id=${post.id})}"
+                       class="btn btn-sm btn-warning me-2">
+                        Edit
+                    </a>
+
+                    <!-- DELETE BUTTON -->
+                    <a th:href="@{/delete/{id}(id=${post.id})}"
+                       class="btn btn-sm btn-danger"
+                       onclick="return confirm('Delete this post?');">
+                        Delete
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
